@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class GreetingController {
   @Autowired GreetingService service;
 
-  @PostMapping("/greetings")
+  @PostMapping("/greeting")
   public Greeting greet(@RequestBody final CreateGreetingRequest request) {
+
     return service.create(request);
   }
 }
