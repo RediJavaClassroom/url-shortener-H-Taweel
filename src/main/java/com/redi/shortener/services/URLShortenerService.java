@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class URLShortenerService {
-  Map<URL, UUID> urlsDB = new HashMap<>();
+  Map<UUID, URI> urlsDB = new HashMap<>();
 
   public CreateShortURLResponse create(final CreateShortURLRequest request)
       throws MalformedURLException {
