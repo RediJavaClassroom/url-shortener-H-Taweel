@@ -8,6 +8,9 @@ import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+
+import com.redi.shortener.model.ExpandShortURLRequest;
+import com.redi.shortener.model.ExpandShortURLResponse;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -28,4 +31,13 @@ public class URLShortenerService {
     urlsDB.put(identifier, request.url());
     return new CreateShortURLResponse(shortURL);
   }
+
+      public ExpandShortURLResponse expand(final ExpandShortURLRequest request) {
+
+//      if (urlsDB.containsKey(request.shortURLKey())){
+//          urlsDB.get(request.shortURLKey());
+//      }
+      return new ExpandShortURLResponse(urlsDB.get(request.shortURLKey()));
+    }
+
 }
