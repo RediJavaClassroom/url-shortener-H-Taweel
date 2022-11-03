@@ -1,5 +1,5 @@
 package com.redi.shortener.model;
 
-import java.net.URL;
+import java.net.URI;
 
-public record CreateShortURLResponse(URL shortURL) {}
+public record CreateShortURLResponse(URI shortURL) {}

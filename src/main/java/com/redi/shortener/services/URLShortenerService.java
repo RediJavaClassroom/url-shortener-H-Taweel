@@ -3,7 +3,8 @@ package com.redi.shortener.services;
 import com.redi.shortener.model.CreateShortURLRequest;
 import com.redi.shortener.model.CreateShortURLResponse;
 import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -23,8 +24,8 @@ public class URLShortenerService {
       return new CreateShortURLResponse(shortURL);
     }
     UUID identifier = UUID.randomUUID();
-    URL shortURL = new URL(domainName + identifier);
-    urlsDB.put(request.url(), identifier);
+    URI shortURL = URI.create(domainName + identifier);
+    urlsDB.put(identifier, request.url());
     return new CreateShortURLResponse(shortURL);
   }
 }
