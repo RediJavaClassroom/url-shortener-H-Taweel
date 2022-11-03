@@ -21,11 +21,11 @@ public class URLShortenerService {
       throws MalformedURLException {
     String domainName = "http://localhost:8080/";
 
-    if (urlsDB.containsKey(request.url())) {
-      UUID w = urlsDB.get(request.url());
-      URL shortURL = new URL(domainName + w);
-      return new CreateShortURLResponse(shortURL);
-    }
+//    if (urlsDB.containsValue(request.url())) {
+//      UUID w = urlsDB.get(request.url());
+//      URL shortURL = new URL(domainName + w);
+//      return new CreateShortURLResponse(shortURL);
+//    }
     UUID identifier = UUID.randomUUID();
     URI shortURL = URI.create(domainName + identifier);
     urlsDB.put(identifier, request.url());
