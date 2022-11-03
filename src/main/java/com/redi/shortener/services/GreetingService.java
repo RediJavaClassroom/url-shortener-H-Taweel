@@ -8,6 +8,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class GreetingService {
   public Greeting create(final CreateGreetingRequest request) {
-    return new Greeting(UUID.randomUUID(), request.name().toUpperCase());
+    return new Greeting(UUID.randomUUID(), request.name());
   }
 }
