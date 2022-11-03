@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class URLShortenerController {
   @Autowired URLShortenerService urlShortenerService;
 
-  @PostMapping("/shortener")
+  @PostMapping("/shortener/shorten")
   public CreateShortURLResponse shortener(@RequestBody final CreateShortURLRequest request)
       throws MalformedURLException {
     return urlShortenerService.create(request);
