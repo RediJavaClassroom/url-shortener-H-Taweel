@@ -14,6 +14,6 @@ class GreetingServiceTest {
 
   @Test
   void greet() {
-    assertThat(service.create(request).name(), equalTo(name));
+    assertThat(service.create(request).getName(), equalTo(name));
   }
 }
