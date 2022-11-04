@@ -18,9 +18,8 @@ public class URLShortenerController {
     return urlShortenerService.create(request);
   }
 
-  @GetMapping("/shortener/expand")
-  public ExpandShortURLResponse expand(@RequestBody final ExpandShortURLRequest response){
-    return urlShortenerService.expand(response);
+  @GetMapping("/{key}")
+  public ExpandShortURLResponse expand(@PathVariable final String key) {
+    return urlShortenerService.expand(key);
   }
-
 }
