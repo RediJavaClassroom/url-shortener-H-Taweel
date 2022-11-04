@@ -30,12 +30,11 @@ public class URLShortenerService {
     return new CreateShortURLResponse(shortURL);
   }
 
-      public ExpandShortURLResponse expand(final ExpandShortURLRequest request) {
+  public ExpandShortURLResponse expand(final String key) {
 
-//      if (urlsDB.containsKey(request.shortURLKey())){
-//          urlsDB.get(request.shortURLKey());
-//      }
-      return new ExpandShortURLResponse(urlsDB.get(request.shortURLKey()));
-    }
-
+    //      if (urlsDB.containsKey(request.shortURLKey())){
+    //          urlsDB.get(request.shortURLKey());
+    //      }
+    return new ExpandShortURLResponse(urlsDB.get(key));
+  }
 }
