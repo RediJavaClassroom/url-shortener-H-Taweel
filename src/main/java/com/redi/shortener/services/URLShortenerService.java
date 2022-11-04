@@ -2,15 +2,13 @@ package com.redi.shortener.services;
 
 import com.redi.shortener.model.CreateShortURLRequest;
 import com.redi.shortener.model.CreateShortURLResponse;
+import com.redi.shortener.model.ExpandShortURLResponse;
 import java.net.MalformedURLException;
 import java.net.URI;
-
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
-import com.redi.shortener.model.ExpandShortURLRequest;
-import com.redi.shortener.model.ExpandShortURLResponse;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.stereotype.Service;
 
 @Service
