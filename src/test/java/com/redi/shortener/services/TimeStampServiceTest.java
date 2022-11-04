@@ -1,21 +1,19 @@
 package com.redi.shortener.services;
 
-import com.redi.shortener.model.TimeStamping;
-import org.junit.jupiter.api.Test;
-
-import java.time.Instant;
-
 import static org.hamcrest.MatcherAssert.assertThat;
-
 import static org.hamcrest.Matchers.*;
+
+import com.redi.shortener.model.TimeStamping;
+import java.time.Instant;
+import org.junit.jupiter.api.Test;
 
 class TimeStampServiceTest {
 
-    @Test
-    void createTimeStamp() {
-        TimeStampService service = new TimeStampService();
-        final TimeStamping timeStamping = service.createTimeStamp();
+  @Test
+  void createTimeStamp() {
+    TimeStampService service = new TimeStampService();
+    final TimeStamping timeStamping = service.createTimeStamp();
 
-        assertThat(timeStamping.timeStamp(), lessThanOrEqualTo(Instant.now())); // timestmp > now
-    }
+    assertThat(timeStamping.timeStamp(), lessThanOrEqualTo(Instant.now())); // timestmp > now
+  }
 }
