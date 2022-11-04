@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TimeStampController {
-    @Autowired TimeStampService timeStampService;
+  @Autowired TimeStampService timeStampService;
 
-    @GetMapping("/time")
-    public TimeStamping timeStamping() {
-        return timeStampService.createTimeStamp();
-    }
+  @GetMapping("/time")
+  public TimeStamping timeStamping() {
+    return timeStampService.createTimeStamp();
+  }
 }

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class GreetingController {
   @Autowired GreetingService service;
 
-  @PostMapping("/greeting")
+  @PostMapping("/greetings")
   public Greeting greet(@RequestBody final CreateGreetingRequest request) {
 
     return service.create(request);
