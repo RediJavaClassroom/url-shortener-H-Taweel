@@ -8,12 +8,12 @@ import org.junit.jupiter.api.Test;
 
 class GreetingServiceTest {
 
-  final String name = "Pedro";
+  final String name = "John";
   final GreetingService service = new GreetingService();
   final CreateGreetingRequest request = new CreateGreetingRequest(name);
 
   @Test
   void greet() {
-    assertThat(service.create(request).getName(), equalTo(name));
+    assertThat(service.create(request).name(), equalTo(name));
   }
 }
