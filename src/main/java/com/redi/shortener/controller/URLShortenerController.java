@@ -19,7 +19,7 @@ public class URLShortenerController {
   @PostMapping("/short-links")
   public CreateShortURLResponse shorten(@RequestBody final CreateShortURLRequest request, LocalDate validUntil)
       throws MalformedURLException {
-    return urlShortenerService.create(request);
+    return urlShortenerService.create(request, validUntil);
   }
 
   @GetMapping("/{key}")
