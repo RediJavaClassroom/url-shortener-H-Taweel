@@ -34,5 +34,4 @@ public class UserService {
             .map(t -> t.substring(0, 1).toUpperCase() + t.substring(1).toLowerCase())
             .collect(Collectors.joining(" "));
   }
-
 }
