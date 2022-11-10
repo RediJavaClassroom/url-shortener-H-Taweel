@@ -23,7 +23,7 @@ public class URLShortenerController {
   }
 
   @GetMapping("/{key}")
-  public ExpandShortURLResponse expand(@PathVariable final String key) {
+  public ExpandShortURLResponse expand(@PathVariable final String key) throws URISyntaxException {
     return urlShortenerService.expand(key);
   }
 }
