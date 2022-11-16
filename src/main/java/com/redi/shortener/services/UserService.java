@@ -17,10 +17,15 @@ public class UserService {
 
   public User create(final UserRegistration registration) {
     final UUID id = UUID.randomUUID();
-    if (usersDB.values().stream().anyMatch(user -> user.email().equals(registration.email().toLowerCase()))) {
+    if (usersDB.values().stream()
+        .anyMatch(user -> user.email().equals(registration.email().toLowerCase()))) {
       throw new RuntimeException("User already exists: " + id);
     }
-    final User user = new User(id, UserService.capitalizeWord(registration.name()), registration.email().toLowerCase());
+    final User user =
+        new User(
+            id,
+            UserService.capitalizeWord(registration.name()),
+            registration.email().toLowerCase());
     usersDB.put(id, user);
     return user;
   }
@@ -29,9 +34,9 @@ public class UserService {
     return usersDB.get(userId);
   }
 
-  public static String capitalizeWord(String str){
+  public static String capitalizeWord(String str) {
     return Arrays.stream(str.split("\\s+"))
-            .map(t -> t.substring(0, 1).toUpperCase() + t.substring(1).toLowerCase())
-            .collect(Collectors.joining(" "));
+        .map(t -> t.substring(0, 1).toUpperCase() + t.substring(1).toLowerCase())
+        .collect(Collectors.joining(" "));
   }
 }
