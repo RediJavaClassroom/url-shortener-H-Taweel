@@ -1,0 +1,13 @@
+
+//TODO
+
+Mainly:
+redirect the link
+make unit tests
+make integration test
+
+Secondary:
+add validation of URL response 301
+
+Validate before saving the URL if we already have it saved, if this is the case return the same key from the already stored url shortened.
+Validate when expanding the URL with a key that exists and give an error
